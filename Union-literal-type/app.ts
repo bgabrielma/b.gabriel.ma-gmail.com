@@ -29,3 +29,7 @@ console.log(combinedAges);
 
 const combinedNames = combine("Max", "Anna", "as-text");
 console.log(combinedNames);
+
+function addNumberWithReturnValue(number1: number, number2: number): number {
+  return number1 + number2;
+}
