@@ -57,3 +57,42 @@ accounting.addReport("Something went wrong...");
 accounting.printReports();
 
 it.showAdmins();
+
+// Interfaces
+interface Named {
+  readonly name?: string;
+  outputName?: string;
+}
+
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name?: string;
+  age: number;
+
+  constructor(age: number, name?: string) {
+    if (name) this.name = name;
+    this.age = age;
+  }
+
+  greet(phrase: string) {
+    if (this.name) console.log(this.name);
+  }
+}
+
+let user1: Person;
+
+user1 = {
+  name: "Bruno",
+  age: 19,
+  greet: (phrase: string): void => console.log(phrase),
+};
+
+// Interfaces for functions
+interface AddFn {
+  (n1: number, n2: number): number;
+}
+
+const addFn: AddFn = (n1: number, n2: number) => n1 + n2;
